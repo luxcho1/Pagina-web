@@ -22,7 +22,9 @@ urlpatterns = [
     path('crud/',include('crud.urls')),
     path('admin/', admin.site.urls),
     path('medicamentos/',include('medicamentos.urls')),
-    path('crud_ubicacion/',include('crud_ubicacion.urls'))
+    path('crud_ubicacion/',include('crud_ubicacion.urls')),
+    path('api/',include('rest_expertos.urls')),
+    
 ]
 
 if settings.DEBUG:

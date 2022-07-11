@@ -1,7 +1,6 @@
 from django.urls import path
 from .views import *
 
-
 urlpatterns = [
     path('', lista_empleados, name='Empleado'),
     path('<str:id_empleado>/delete', borrar_empleado, name= 'borrar-empleado'),

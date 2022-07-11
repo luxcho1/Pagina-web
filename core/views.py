@@ -106,9 +106,11 @@ def logout(request):
 def success(request):
     if 'usuario' not in request.session:
         return redirect('/')
-        
+
+
     return render(request, 'core/success.html')
 
 def medicamentos(request):
     context =   { 'medicamentos': Medicamento.objects.all()} 
     return render(request,"core/medicamentos.html",context)
+

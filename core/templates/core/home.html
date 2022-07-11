@@ -9,6 +9,25 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'core/css/home.css' %}">
 <main>
+  <script>
+    $(document).ready(function(){
+      $.get("/api/expertos",
+      function(data){
+          $.each(data,function(i,item){
+           const nombre1 = item.nombre[0]
+           const nombre2 = item.nombre[1]
+           const nombre3 = item.nombre[2]
+           const nombre4 = item.nombre[3]
+           const desc1 = item.descripcion[0]
+           const desc2 = item.descripcion[1]
+           const desc3 = item.descripcion[2]
+           const desc4 = item.descripcion[3]
+  
+          })
+      })
+  
+  })
+  </script>
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -59,7 +78,7 @@
                     </div>
                     <div class="col-md-7">
                       <div class="card-body">
-                        <h5 class="card-title text-center fs-1">Maria Perez</h5>
+                        <h5 class="card-title text-center fs-1" id="nombre1">Maria Perez</h5>
                         <p class="card-text text-center fs-4"> Con magister en medicina, Maria siempre tuvo un ojo sobre la importancia de la salud mental, asi que decidio dedicar su vida y su carrera a la investigacion de los efectos de la salud mental en la vida humana.</p>
                       </div>
                     </div>
@@ -75,7 +94,7 @@
                       </div>
                       <div class="col-md-7">
                         <div class="card-body">
-                          <h5 class="card-title text-center fs-1">Cristiano Ronaldo</h5>
+                          <h5 class="card-title text-center fs-1" id="nombre2">Cristiano Ronaldo</h5>
                           <p class="card-text text-center fs-4">Un gran medico, venido desde Portugal debido que allá tienen más consciencia sobre la importancia de la salud mental. Le gusta reflexionar sobre la vida y ademas tiene un talento para el futbol.</p>
                         </div>
                       </div>
@@ -91,7 +110,7 @@
                       </div>
                       <div class="col-md-7">
                         <div class="card-body">
-                          <h5 class="card-title text-center fs-1">Gary "El pitbull" Medel</h5>
+                          <h5 class="card-title text-center fs-1" id="nombre3">Gary "El pitbull" Medel</h5>
                           <p class="card-text text-center fs-4">Un psicologo de alto prestigio, no por eso lo apodan el pitbull, siempre dando la cara por la importancia de la salud mental. Un gran amigo adentro y fuera de la cancha.</p>
                         </div>
                       </div>
@@ -107,7 +126,7 @@
                       </div>
                       <div class="col-md-7">
                         <div class="card-body">
-                          <h5 class="card-title text-center fs-1">Victoria De Rota</h5>
+                          <h5 class="card-title text-center fs-1" id="nombre4">Victoria De Rota</h5>
                           <p class="card-text text-center fs-4">Una de las primeras psicóloga en el pais en poner sus ojos en la mira de la salud mental. Tambien muy cercana, le gusta dar charlas en los colegios para hacer conciencia sobre la importancia de tener una buena salud mental</p>
                         </div>
                       </div>
@@ -183,3 +202,23 @@
           </section>
       </main>
 {% endblock %}
+
+<script>
+  $(document).ready(function(){
+    $.get("/api/expertos",
+    function(data){
+        $.each(data,function(i,item){
+         const nombre1 = item.nombre[0]
+         const nombre2 = item.nombre[1]
+         const nombre3 = item.nombre[2]
+         const nombre4 = item.nombre[3]
+         const desc1 = item.descripcion[0]
+         const desc2 = item.descripcion[1]
+         const desc3 = item.descripcion[2]
+         const desc4 = item.descripcion[3]
+
+        })
+    })
+
+})
+</script>
