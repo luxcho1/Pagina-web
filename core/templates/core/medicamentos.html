@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<h1>Medicamentos</h1>
+{% endblock %}
+{% block secondary_content %}
+<div class="container mt-4 mb-4">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% for m in medicamentos %}
+        <div class="col">
+            <div class="card">
+                {% if m.imagen %}
+                    <img class="card-img-top" src="{{m.imagen.url}}" alt="{{m.idMedicamento}}"></td>
+                {% else %}
+                    <img class="card-img-top" src="{% static 'core/img/not_found.png' %}" alt="{{m.idMedicamento}}"></td>
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{m.descripcion}}</h5>
+                    <p class="card-text">${{m.precio}}</p>
+                    <p class="card-text font-primary">{{m.stock}}</p>
+                    <p class="card-text">{{m.marca}}</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary" href="">
+                        <p>Agregar al carrito</p>
+                    </a>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+    </div>
+ </div>
+ {% endblock %}

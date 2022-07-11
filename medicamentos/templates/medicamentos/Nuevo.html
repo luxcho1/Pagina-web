@@ -1,12 +1,12 @@
-{% extends 'crud/base.html' %}
+{% extends 'medicamentos/base.html' %}
 
 {% load static %}
 
-{% block title %}Nuevo Empleado{% endblock %}
+{% block title %}Agregar Medicamento{% endblock %}
 
 {% block content %}
 <div class="container mt-4 py-4 text-white bg-dark rounded">
-    <h1>Registrar Nuevos Empleados</h1>
+    <h1>Registrar Nuevos Medicamentos</h1>
 </div>
 {% endblock %}
 
@@ -15,7 +15,7 @@
     <div class="row">
         {% if 'OK' in request.GET %}
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Completado</strong> Empleado registrado satisfactoriamente.
+                <strong>Completado</strong> Medicamento registrado satisfactoriamente.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         {% endif %}
@@ -28,9 +28,9 @@
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group mb-3">
-                <label for="nombre" class="fw-bold">Nombre Empleado</label>
+                <label for="idMedicamento" class="fw-bold">Id Medicamento</label>
                 <div class="input-group">
-                    {{form.nombre}}
+                    {{form.idMedicamento}}
                 </div>
             </div>
             <div class="form-group mb-3">
@@ -40,15 +40,27 @@
                 </div>
             </div>
             <div class="form-group mb-3">
-                <label for="edad" class="fw-bold">Edad del empleado</label>
+                <label for="precio" class="fw-bold">precio</label>
                 <div class="input-group">
-                    {{form.edad}}
+                    {{form.precio}}
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="stock" class="fw-bold">stock</label>
+                <div class="input-group">
+                    {{form.stock}}
                 </div>
             </div>
             <div class="form-group mb-3">
                 <label for="imagen" class="fw-bold">Imagen</label>
                 <div class="input-group">
                     {{form.imagen}}
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="marca" class="fw-bold">marca</label>
+                <div class="input-group">
+                    {{form.marca}}
                 </div>
             </div>
             <div class="text-center mt-4">

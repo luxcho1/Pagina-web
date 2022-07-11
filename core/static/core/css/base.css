@@ -172,3 +172,8 @@ body{
     -webkit-background-clip: text;
   
   }
+
+  .img-producto {
+    width: 100px;
+    height: 100px;
+  }

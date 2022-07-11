@@ -3,6 +3,7 @@ from django.contrib import messages
 from .models import *
 import bcrypt
 from crud.models import *
+from medicamentos.models import *
 
 # Create your views here.
 def root(request):
@@ -106,3 +107,6 @@ def success(request):
         
     return render(request, 'core/success.html')
 
+def medicamentos(request):
+    context =   { 'medicamentos': Medicamento.objects.all()} 
+    return render(request,"core/medicamentos.html",context)
