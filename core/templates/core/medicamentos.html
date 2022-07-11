@@ -23,9 +23,30 @@
                     <p class="card-text">{{m.marca}}</p>
                 </div>
                 <div class="card-footer text-center">
-                    <a class="btn btn-primary" href="">
-                        <p>Agregar al carrito</p>
-                    </a>
+                        {% if request.session.usuario.rol == 'USER' %}
+                        <a class="btn btn-primary" href="">
+                            <p>Agregar al carrito</p>
+                        </a>
+                        {% else %}
+                        <a class="btn btn-outline-danger modal-borrar mx-auto" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-href="{% url 'registro' %}">Agregar al Carrito</a>
+                    {% endif %}
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Error</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h6 class="modal-title">Necesita iniciar sesion para ingresar al carrito .</h6>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="{% url 'registro' %}" id="confirmar-borrar" class="btn btn-success">Ir a registro</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -33,3 +54,5 @@
     </div>
  </div>
  {% endblock %}
+
+

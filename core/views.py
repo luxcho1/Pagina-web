@@ -4,6 +4,7 @@ from .models import *
 import bcrypt
 from crud.models import *
 from medicamentos.models import *
+from crud_ubicacion.models import *
 
 # Create your views here.
 def root(request):
@@ -19,7 +20,8 @@ def nosotros(request):
     return render(request,"core/nosotros.html",context)
 
 def ubicacion(request):
-    return render(request,"core/ubicacion.html")
+    context =   { 'ubicacion': Ubicacion.objects.all()}
+    return render(request,"core/ubicacion.html",context)
 
 def contacto(request):
     return render(request,"core/contacto.html")

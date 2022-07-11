@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'crud',
-    'medicamentos'
+    'medicamentos',
+    'crud_ubicacion',
 ]
 
 MIDDLEWARE = [

@@ -21,7 +21,8 @@ urlpatterns = [
     path('',include('core.urls')),
     path('crud/',include('crud.urls')),
     path('admin/', admin.site.urls),
-    path('medicamentos/',include('medicamentos.urls'))
+    path('medicamentos/',include('medicamentos.urls')),
+    path('crud_ubicacion/',include('crud_ubicacion.urls'))
 ]
 
 if settings.DEBUG:
