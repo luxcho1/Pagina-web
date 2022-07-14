@@ -60,9 +60,9 @@ def register(request):
                 messages.success(request, "Usuario registrado con éxito!!!!")
                 request.session['level_mensaje'] = 'alert-success'
             
-            return redirect('/')
+            return redirect('registro')
 
-        return render(request, 'core/login.html')
+        return render(request, 'registro')
             
             
 def login(request):
@@ -91,10 +91,10 @@ def login(request):
                     return redirect('/success')
                 else:
                     messages.error(request,"Datos mal ingresados o el usuario no existe!!!")
-                    return redirect('/home')
+                    return redirect('registro')
             else:
                 messages.error(request,"Datos mal ingresados o el usuario no existe!!!")
-                return redirect('/home')
+                return redirect('regristro')
             
 def logout(request):
     if 'usuario' in request.session:
